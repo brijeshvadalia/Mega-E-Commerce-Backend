@@ -14,6 +14,7 @@ const orderSchema = new mongoose.Schema(
                     price: Number
                 }
             ],
+            
             required: true
         },
         user: {
