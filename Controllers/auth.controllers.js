@@ -91,7 +91,7 @@ export const login = asyncHandler(async (req, res) => {
 /******************************************************
  * @LOGOUT
  * @route http://localhost:5000/api/auth/logout
- * @description User logout bby clearing user cookies
+ * @description User logout by clearing user cookies
  * @parameters  
  * @returns success message
  ******************************************************/
