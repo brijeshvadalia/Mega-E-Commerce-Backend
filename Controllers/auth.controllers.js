@@ -49,3 +49,11 @@ export const signUp = asyncHandler(async (req, res) => {
     })
 
 })
+
+/******************************************************
+ * @LOGIN
+ * @route http://localhost:5000/api/auth/login
+ * @description User signIn Controller for loging new user
+ * @parameters  email, password
+ * @returns User Object
+ ******************************************************/
