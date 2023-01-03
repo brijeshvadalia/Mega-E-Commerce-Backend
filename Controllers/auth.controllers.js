@@ -57,3 +57,32 @@ export const signUp = asyncHandler(async (req, res) => {
  * @parameters  email, password
  * @returns User Object
  ******************************************************/
+export const login = asyncHandler(async (req, res) => {
+    const { email, password } = req.body
+
+    if ( !email || !password) {
+        throw new CustomError('Please fill all fields', 400)
+    }
+
+    const user = await User.findOne({email}).select("+password")
+
+    if (!user) {
+        throw new CustomError('Invalid credentials', 400)
+    }
+
+    const isPasswordMatched = await user.comparePassword(password)
+
+    if (isPasswordMatched) {
+        const token = user.getJwtToken()
+        user.password = undefined;
+        res.cookie("token", token, cookieOptions)
+        return res.status(200).json({
+            success: true,
+            token,
+            user
+        })
+    }
+
+    throw new CustomError('Invalid credentials - pass', 400)
+
+})
