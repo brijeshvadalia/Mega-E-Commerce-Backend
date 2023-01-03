@@ -86,3 +86,13 @@ export const login = asyncHandler(async (req, res) => {
     throw new CustomError('Invalid credentials - pass', 400)
 
 })
+
+
+/******************************************************
+ * @LOGOUT
+ * @route http://localhost:5000/api/auth/logout
+ * @description User logout bby clearing user cookies
+ * @parameters  
+ * @returns success message
+ ******************************************************/
+
