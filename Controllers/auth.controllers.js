@@ -209,3 +209,12 @@ export const resetPassword = asyncHandler(async (req, res) => {
     })
 
 })
+
+/******************************************************
+ * @GET_PROFILE
+ * @REQUEST_TYPE GET
+ * @route http://localhost:5000/api/auth/profile
+ * @description check for token and populate req.user
+ * @parameters 
+ * @returns User Object
+ ******************************************************/
