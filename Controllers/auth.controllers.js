@@ -107,3 +107,14 @@ export const logout = asyncHandler(async (_req, res) => {
         message: "Logged Out"
     })
 })
+
+
+/******************************************************
+ * @FORGOT_PASSWORD
+ * @route http://localhost:5000/api/auth/password/forgot
+ * @description User will submit email and we will generate a token
+ * @parameters  email
+ * @returns success message - email send
+ ******************************************************/
+
+
