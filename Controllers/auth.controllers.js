@@ -157,3 +157,12 @@ export const forgotPassword = asyncHandler(async(req, res) => {
     }
 
 })
+
+
+/******************************************************
+ * @RESET_PASSWORD
+ * @route http://localhost:5000/api/auth/password/reset/:resetToken
+ * @description User will be able to reset password based on url token
+ * @parameters  token from url, password and confirmpass
+ * @returns User object
+ ******************************************************/
