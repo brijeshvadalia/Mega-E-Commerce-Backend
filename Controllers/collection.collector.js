@@ -30,3 +30,37 @@ export const createCollection = asyncHandler(async (req, res) => {
     })
 
 })
+
+export const updateCollection = asyncHandler(async (req, res) => {
+    //existing value to be updates
+    const {id: collectionId} = req.params
+    //new value to get updated
+    const {name} = req.body
+
+    if (!name) {
+        throw new CustomError("Collection name is required", 400)
+    }
+
+    let updatedCollection = await Collection.findByIdAndUpdate(
+        collectionId,
+        {
+            name,
+        },
+        {
+            new: true,
+            runValidators: true
+        }
+    )
+
+    if (!updatedCollection) {
+        throw new CustomError("Collection not found", 400)
+    }
+
+    //send response to front end
+    res.status(200).json({
+        success: true,
+        message: "Collection updated successfully",
+        updateCollection
+    })
+
+})
