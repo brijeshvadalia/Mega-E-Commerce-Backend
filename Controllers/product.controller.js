@@ -94,3 +94,14 @@ export const addProduct = asyncHandler(async (req, res) => {
  * @returns Products Object
  *********************************************************/
 
+export const getAllProducts = asyncHandler( async (req, res) => {
+    const products = await Product.find({})
+
+    if (!products) {
+        throw new CustomError("No product was found", 404)
+    }
+    res.status(200).json({
+        success: true,
+        products
+    })
+})
