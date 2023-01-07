@@ -84,3 +84,13 @@ export const addProduct = asyncHandler(async (req, res) => {
         }
     })
 })
+
+
+/**********************************************************
+ * @GET_ALL_PRODUCT
+ * @route https://localhost:5000/api/product
+ * @description Controller used for getting all products details
+ * @description User and admin can get all the prducts
+ * @returns Products Object
+ *********************************************************/
+
