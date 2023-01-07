@@ -105,3 +105,11 @@ export const getAllProducts = asyncHandler( async (req, res) => {
         products
     })
 })
+
+/**********************************************************
+ * @GET_PRODUCT_BY_ID
+ * @route https://localhost:5000/api/product
+ * @description Controller used for getting single product details
+ * @description User and admin can get single product details
+ * @returns Product Object
+ *********************************************************/
